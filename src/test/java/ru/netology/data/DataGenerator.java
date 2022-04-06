@@ -14,9 +14,9 @@ public class DataGenerator {
         return new UserInfo("vasya", "qwerty123");
     }
 
-    public static UserInfo getInvalidUserInfo() {
+    public static UserInfo getInvalidPasswordInfo() {
         Faker faker = new Faker(new Locale("en"));
-        String login = faker.name().username();
+        String login = "vasya";
         String password = faker.internet().password();
         return new UserInfo(login, password);
     }

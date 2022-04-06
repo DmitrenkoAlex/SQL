@@ -8,8 +8,7 @@ import ru.netology.data.SQLUtils;
 import ru.netology.page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
-import static ru.netology.data.DataGenerator.generateUserInfo;
-import static ru.netology.data.DataGenerator.getInvalidUserInfo;
+import static ru.netology.data.DataGenerator.*;
 
 public class LoginTest {
     
@@ -33,13 +32,13 @@ public class LoginTest {
 
     @Test
     void shouldBlock() {
-        val invalidUser = getInvalidUserInfo();
+        val invalidPassword = getInvalidPasswordInfo();
         val loginPage = new LoginPage();
-        loginPage.login(invalidUser);
+        loginPage.login(invalidPassword);
         loginPage.cleanFields();
-        loginPage.login(invalidUser);
+        loginPage.login(invalidPassword);
         loginPage.cleanFields();
-        loginPage.login(invalidUser);
+        loginPage.login(invalidPassword);
         loginPage.blockNotification();
     }
 
