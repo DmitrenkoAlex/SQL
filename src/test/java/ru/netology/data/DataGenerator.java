@@ -9,14 +9,14 @@ public class DataGenerator {
     }
 
     public static UserInfo generateUserInfo() {
-        String login = "vasya";
-        String password = "qwerty123";
-        return new UserInfo("vasya", "qwerty123");
+        String login = "netology";
+        String password = "awdr";
+        return new UserInfo("netology", "awdr");
     }
 
     public static UserInfo getInvalidPasswordInfo() {
         Faker faker = new Faker(new Locale("en"));
-        String login = "vasya";
+        String login = "netology";
         String password = faker.internet().password();
         return new UserInfo(login, password);
     }
